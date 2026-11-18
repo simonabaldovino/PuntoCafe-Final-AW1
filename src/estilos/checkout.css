@@ -1,0 +1,250 @@
+.grilla-checkout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.tarjeta-checkout {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* FORMULARIO */
+.formulario-retiro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-retiro .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formulario-retiro .campo label,
+.opciones-modalidad legend {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #453029;
+}
+
+.formulario-retiro .campo input {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #FAF5EF;
+  color: #453029;
+  border: 1px solid #EFEAE4;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario-retiro .campo input::placeholder {
+  color: #8C7A6B;
+}
+
+.formulario-retiro .campo input:focus {
+  outline: none;
+  border-color: #D97736;
+  box-shadow: 0 0 0 3px rgba(217, 119, 54, 0.2);
+}
+
+/* MODALIDAD */
+.opciones-modalidad {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opciones-modalidad legend {
+  margin-bottom: 10px;
+}
+
+.opcion-modalidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #EFEAE4;
+  color: #2C1D18;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.opcion-modalidad:hover {
+  background-color: #E2D9CE;
+}
+
+.opcion-modalidad input {
+  accent-color: #D97736;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.opcion-modalidad:has(input:checked) {
+  background-color: #D97736;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(217, 119, 54, 0.25);
+}
+
+.opcion-modalidad:has(input:checked) input {
+  accent-color: #FFFFFF;
+}
+
+.btn-confirmar {
+  background-color: #D97736;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(217, 119, 54, 0.25);
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.btn-confirmar:hover {
+  background-color: #B85F24;
+}
+
+.totales {
+  margin-top: 15px;
+}
+
+.totales .linea-subtotal,
+.totales .linea-total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totales .linea-subtotal {
+  font-size: 0.95rem;
+  color: #8C7A6B;
+  margin-bottom: 10px;
+}
+
+.totales .linea-total {
+  font-size: 1.3rem;
+  color: #2C1D18;
+  padding-top: 12px;
+  border-top: 2px solid #D97736;
+}
+
+@media (min-width: 768px) {
+  .grilla-checkout {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+
+  .tarjeta-checkout {
+    padding: 30px;
+  }
+
+  .opciones-modalidad {
+    flex-direction: row;
+  }
+
+  .seccion-resumen {
+    position: sticky;
+    top: 130px;
+  }
+}
+
+/* RESUMEN DEL PEDIDO */
+.lista-resumen {
+  list-style: none;
+}
+
+.lista-resumen .item-resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #EFEAE4;
+}
+
+.item-resumen .item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-resumen .item-nombre {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #453029;
+}
+
+.controles-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controles-cantidad .btn-cantidad {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #D97736;
+  background-color: #FAF5EF;
+  color: #D97736;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.controles-cantidad .btn-cantidad:hover {
+  background-color: #D97736;
+  color: #FFFFFF;
+}
+
+.controles-cantidad .cantidad-valor {
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 18px;
+  text-align: center;
+}
+
+.item-resumen .item-acciones {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-resumen .item-precio {
+  font-weight: bold;
+  color: #2C1D18;
+}
+
+.item-resumen .btn-eliminar {
+  background: none;
+  border: none;
+  color: #8C7A6B;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.item-resumen .btn-eliminar:hover {
+  color: #FFFFFF;
+  background-color: #D97736;
+}

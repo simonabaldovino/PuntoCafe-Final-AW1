@@ -1,0 +1,112 @@
+/* FILTROS DEL MENÚ */
+.seccion-filtros {
+  margin-bottom: 35px;
+}
+
+.filtros-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.filtros-lista .filtro-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: #EFEAE4;
+  color: #2C1D18;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filtros-lista .filtro-btn:hover {
+  background-color: #E2D9CE;
+}
+
+.filtros-lista .filtro-btn.activo {
+  background-color: #D97736;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(217, 119, 54, 0.25);
+}
+
+/* GRILLA Y TARJETAS DE PRODUCTOS */
+.grilla-productos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.tarjeta-producto {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tarjeta-producto .info-card {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tarjeta-producto .info-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #453029;
+}
+
+.tarjeta-producto .info-card .precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C1D18;
+  margin-bottom: 8px;
+}
+
+.tarjeta-producto .info-card .descripcion {
+  font-size: 0.85rem;
+  color: #8C7A6B;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.tarjeta-producto .btn-agregar {
+  background-color: #D97736;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.tarjeta-producto .btn-agregar:hover {
+  background-color: #B85F24;
+}
+
+@media (min-width: 768px) {
+  .grilla-productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
